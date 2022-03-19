@@ -1,0 +1,7 @@
+{
+  "name": "HarenaProjectApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
