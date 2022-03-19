@@ -10,3 +10,4 @@ A continuación se describirá la App con un mapa de navegación (realizado con 
 
 ## Mapa de navegación
 <img width="500px" src="./src/assets/draftImage/navMapHarenaProjectApp.png">
+**Figura 1:** Mapa de navegación de HarenaProjectApp.
