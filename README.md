@@ -9,4 +9,4 @@ Yo formo parte de este gran equipo. He sido voluntario desde que llegue a Españ
 A continuación se describirá la App con un mapa de navegación (realizado con FigJam, figura 1).
 
 ## Mapa de navegación
-<img width="960px" src="./src/assets/draftImage/navMapHarenaProjectApp.png">
+<img width="500px" src="./src/assets/draftImage/navMapHarenaProjectApp.png">
