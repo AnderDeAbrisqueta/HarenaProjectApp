@@ -11,3 +11,8 @@ A continuación se describirá la App con un mapa de navegación (realizado con 
 ## Mapa de navegación
 <img width="500px" src="./src/assets/draftImage/navMapHarenaProjectApp.png">
 
+## Mock up de la aplicación
+
+En este <a href="https://youtu.be/xc6dFl5yUNM" target="_blank"> enlace </a> se podrá ver la funcionalidad de la aplicación.
+
+
