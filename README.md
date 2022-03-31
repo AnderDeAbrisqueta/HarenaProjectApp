@@ -15,4 +15,10 @@ A continuación se describirá la App con un mapa de navegación (realizado con 
 
 En este <a href="https://youtu.be/xc6dFl5yUNM" target="_blank"> enlace </a> se podrá ver la funcionalidad de la aplicación.
 
+La aplicación tendrá un login que permitirá acceder al coordinador, un screen de register y de recuperación de contraseña. Además, tendrá una pantalla (home), en la que tendrá tres opciones:
+  1. CRUD de usuarios: en esta pantalla se podrá gestionar la información de los adultos mayores.  
+  2. CRUD de voluntarios: en esta pantalla se podrá gestionar la información de los voluntarios.
+  3. Formulario de la visita: en esta pantalla se recogerá la información familiar,  social y sanitaria del adulto mayor y el resultado de la visita.
+  4. Calendario: en eque se podrá agendar y organizar las visitas.
+
 
