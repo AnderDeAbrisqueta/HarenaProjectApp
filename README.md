@@ -15,7 +15,7 @@ A continuación se describirá la App con un mapa de navegación (realizado con 
 
 En este <a href="https://youtu.be/xc6dFl5yUNM" target="_blank"> enlace </a> se podrá ver la funcionalidad de la aplicación.
 
-La aplicación tendrá un login que permitirá acceder al coordinador, un screen de register y de recuperación de contraseña. Además, tendrá una pantalla (home), en la que tendrá tres opciones:
+La aplicación tendrá un login que permitirá acceder al coordinador, un screen de register y de recuperación de contraseña. Además, tendrá una pantalla (home), en la que tendrá cuatro opciones:
 <ol>
   <li>CRUD de usuarios: en esta pantalla se podrá gestionar la información de los adultos mayores. </li>
   <li>CRUD de voluntarios: en esta pantalla se podrá gestionar la información de los voluntarios.</li>
