@@ -41,7 +41,6 @@ La base de datos que se usará para este proyecto será FireBase y la estructura
 		"phone": "449-353-6011", 
 		"email": "akissell0@state.gov", 
 	}
-	
 }
   
 
