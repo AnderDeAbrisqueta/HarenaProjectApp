@@ -26,5 +26,22 @@ La aplicación tendrá un login que permitirá acceder al coordinador, un screen
 ## Base de datos
 
 La base de datos que se usará para este proyecto será FireBase y la estructura de datos será un objetos JSON, la que se puede entender como un árbol JSON alojado en la nube.
+
+{ 
+	“volunteers”: {
+		"id": 1, 
+		"first_name": "Alexis", 
+		"last_name": "Kissell",
+		"gender": "Female",
+		"address": {
+			“street”: “Fátima”,
+			“number”: 20,
+			“postalCode”
+		},
+		"phone": "449-353-6011", 
+		"email": "akissell0@state.gov", 
+	}
+	
+}
   
 
