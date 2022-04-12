@@ -25,7 +25,7 @@ La aplicación tendrá un login que permitirá acceder al coordinador, un screen
 
 ## Base de datos
 
-La base de datos que se usará para este proyecto será FireBase y la estructura de datos será un objetos JSON, la que se puede entender como un árbol JSON alojado en la nube.
+La base de datos que se usará para este proyecto será FireBase y la estructura de datos será un objetos JSON, el que se puede entender como un árbol JSON alojado en la nube.
 
 { 
 	“volunteers”: {
