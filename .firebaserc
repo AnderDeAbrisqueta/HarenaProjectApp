@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "harena-project-app": {
+      "hosting": {
+        "app": [
+          "harena-project-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "harena-project-app"
+  }
+}
