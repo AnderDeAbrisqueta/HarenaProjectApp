@@ -29,7 +29,7 @@ La base de datos que se usará para este proyecto será FireBase y la estructura
 
 ``` json
 {
-  "volunteers": {
+  "person": {
     "id": 1,
     "first_name": "Alexis",
     "last_name": "Kissell",
@@ -37,10 +37,11 @@ La base de datos que se usará para este proyecto será FireBase y la estructura
     "address": {
       "street": "Fátima",
       "number": 20,
-      "postalCod": "29009"
+      "postalCode": "29009"
     },
     "phone": "449-353-6011",
-    "email": "akissell0@state.gov"
+    "email": "akissell0@state.gov",
+    "userType": "Volunteer"
   }
 }
 ```
