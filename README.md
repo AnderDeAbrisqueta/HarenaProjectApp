@@ -31,7 +31,8 @@ La base de datos que se usará para este proyecto será FireBase y la estructura
 {
   "person": {
     "id": 1,
-    "first_name": "Alexis",
+    "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.oXcTgtM39iB0JTxTCUPekAHaDt%26pid%3DApi&f=1"
+    "first_name": "Edurne",
     "last_name": "Kissell",
     "gender": "Female",
     "address": {
