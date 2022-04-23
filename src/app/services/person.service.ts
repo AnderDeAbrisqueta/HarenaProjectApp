@@ -12,6 +12,8 @@ import { Person } from '../model/person';
   providedIn: 'root',
 })
 export class PersonService {
+  persons: Person[] = [];
+
   constructor(private firestore: Firestore) {}
 
   public async addPerson(person: Person) {
@@ -22,5 +24,9 @@ export class PersonService {
     return collectionData(collection(this.firestore, 'persons'), {
       idField: 'personId',
     }) as Observable<Person[]>;
+  }
+
+  public getVolunteers() {
+    return this.persons.filter((p) => (p.userType = 'Volunteer'));
   }
 }

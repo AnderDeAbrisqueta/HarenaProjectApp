@@ -1,11 +1,48 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>volunteersList</ion-title>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Voluntarios</ion-title>
+    <ion-buttons slot="end" padding>
+      <ion-button (click)="addVolunteer()">
+        <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="warning">
+    <ion-searchbar
+      inputmode="search"
+      animated
+      placeholder="Buscar Voluntario....."
+    ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  {{volunteers | async | json}}
-  <br />
-  <button (click)="addVolunteer()">Add Volunteer</button>
+  <ion-list>
+    <ion-item *ngFor="let v of volunteers | async">
+      <ion-avatar slot="start">
+        <img *ngIf="v.imageUrl != ''" [src]="v.imageUrl" />
+        <img
+          *ngIf="v.imageUrl == ''"
+          src="./assets/images/person-outline.svg"
+        />
+      </ion-avatar>
+      <ion-label>
+        {{ v.lastName }} {{ v.firstName }}
+        <h3>{{ v.phone }}</h3>
+        <p>{{v.address.street}}, {{v.address.numberStreet}}</p>
+      </ion-label>
+      <ion-icon name="pencil-outline" color="warning" size="small"></ion-icon>
+      &nbsp;
+      <ion-icon name="trash-outline" color="warning" size="small"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addVolunteer()" color="warning">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

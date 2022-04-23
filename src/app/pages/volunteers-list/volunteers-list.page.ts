@@ -10,8 +10,9 @@ import { PersonService } from '../../services/person.service';
 })
 export class VolunteersListPage implements OnInit {
   volunteers: Observable<Person[]>;
+  filterArray: Observable<Person[]> = this.personService.getPersons();
 
-  constructor(private personService: PersonService) {
+  constructor(public personService: PersonService) {
     this.volunteers = this.personService.getPersons();
   }
 
@@ -36,4 +37,10 @@ export class VolunteersListPage implements OnInit {
     };
     this.personService.addPerson(volunteer);
   }
+
+  // getfilterArray(value: string) {
+  //   if ((value = 'Volunteer')) {
+  //     this.filterArray.subscribe((v) => this.volunteers);
+  //   }
+  // }
 }
