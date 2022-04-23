@@ -5,5 +5,7 @@
 </ion-header>
 
 <ion-content>
-
+  {{volunteers | async | json}}
+  <br />
+  <button (click)="addVolunteer()">Add Volunteer</button>
 </ion-content>

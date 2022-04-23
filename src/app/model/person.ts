@@ -1,5 +1,6 @@
-export interface DataPersonInterface {
+export interface Person {
   personId: string;
+  imageUrl: string;
   firstName: string;
   lastName: string;
   gender: string;
