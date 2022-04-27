@@ -1,9 +1,62 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nueva Persona</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating" color="warning">Imagen:</ion-label>
+    <ion-input clearInput [(ngModel)]="volunteer.imageUrl"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="warning">Nombre:</ion-label>
+    <ion-input clearInput [(ngModel)]="volunteer.firstName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="warning">Apellidos:</ion-label>
+    <ion-input clearInput [(ngModel)]="volunteer.lastName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="warning">Género:</ion-label>
+    <ion-select [(ngModel)]="volunteer.gender" value="Femenino">
+      <ion-select-option value="Femenino">Femenino</ion-select-option>
+      <ion-select-option value="Masculino">Masculino</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="warning">Teléfono:</ion-label>
+    <ion-input clearInput [(ngModel)]="volunteer.phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="warning">E-mail:</ion-label>
+    <ion-input clearInput [(ngModel)]="volunteer.email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="warning">Dirección:</ion-label>
+    <ion-label position="floating" color="warning">Calle:</ion-label>
+    <ion-input clearInput [(ngModel)]="volunteer.address.street"></ion-input>
+    <ion-label position="floating" color="warning">Número:</ion-label>
+    <ion-input
+      clearInput
+      [(ngModel)]="volunteer.address.numberStreet"
+    ></ion-input>
+    <ion-label position="floating" color="warning">Código Postal:</ion-label>
+    <ion-input clearInput [(ngModel)]="volunteer.address.postCode"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="warning">Tipo de usuario:</ion-label>
+    <ion-select [(ngModel)]="volunteer.userType" value="Persona Mayor">
+      <ion-select-option value="Persona Mayor">Persona Mayor</ion-select-option>
+      <ion-select-option value="Persona Voluntaria"
+        >Persona Voluntaria</ion-select-option
+      >
+    </ion-select>
+  </ion-item>
+  <ion-button expand="block" color="warning" (click)="addVolunteer()">
+    Guardar
+  </ion-button>
 </ion-content>
