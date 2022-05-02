@@ -22,4 +22,8 @@ export class VolunteersListPage implements OnInit {
   addVolunteer() {
     this.router.navigateByUrl('create-profile');
   }
+
+  goEditPerson(id: string) {
+    this.router.navigateByUrl(`edit-profile/${id}`);
+  }
 }

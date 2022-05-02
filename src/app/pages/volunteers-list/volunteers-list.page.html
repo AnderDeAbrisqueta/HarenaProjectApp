@@ -35,9 +35,19 @@
         <h3>{{ v.phone }}</h3>
         <p>{{v.address.street}}, {{v.address.numberStreet}}</p>
       </ion-label>
-      <ion-icon name="pencil-outline" color="warning" size="small"></ion-icon>
+      <ion-icon
+        name="pencil-outline"
+        color="warning"
+        size="small"
+        (click)="goEditPerson(v.personId)"
+      ></ion-icon>
       &nbsp;
-      <ion-icon name="trash-outline" color="warning" size="small"></ion-icon>
+      <ion-icon
+        name="trash-outline"
+        color="warning"
+        size="small"
+        (click)="personService.deletePerson(v.personId)"
+      ></ion-icon>
     </ion-item>
   </ion-list>
 
