@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <a><img class="img" src="../../assets/images/logoHarena.svg" /></a>
+
+  <div class="card">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="login">Log in</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="input">
+        <ion-item>
+          <ion-label
+            ><ion-icon name="mail-outline" class="icon"></ion-icon
+          ></ion-label>
+          <ion-input
+            type="email"
+            placeholder="Email"
+            clearInput
+            inputmode="email"
+            pattern="email"
+            type="email"
+            [(ngModel)]="email"
+          ></ion-input>
+        </ion-item>
+        <ion-item class="password">
+          <ion-label
+            ><ion-icon name="lock-closed-outline" class="icon"></ion-icon
+          ></ion-label>
+          <ion-input
+            type="password"
+            placeholder="Password"
+            clearInput
+            pattern="password"
+            type="password"
+            [(ngModel)]="password"
+          ></ion-input>
+        </ion-item>
+        <ion-button expand="block" class="btn" size="large" (click)="login()">
+          Log in
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-button expand="block" fill="clear" href="/reset-password">
+    ¿Olvidaste tu contraseña?
+  </ion-button>
+  <ion-button expand="block" fill="clear" href="/register">
+    ¡Registrate ahora!
+  </ion-button>
+</ion-content>

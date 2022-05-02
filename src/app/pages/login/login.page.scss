@@ -13,33 +13,35 @@ a {
   display: flex;
   justify-content: center;
 }
-
 .card {
   padding: 40px;
-}
-
-#card {
-  padding-left: 40px;
-  padding-right: 40px;
 }
 
 .img {
   padding-top: 80px;
 }
 
-ion-button {
-  margin: 16px;
-  border-radius: 10%;
+.login {
   font-family: "SourceSansPro-Regular";
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
 }
 
-#icon-button {
-  margin: 4px;
+.input {
+  padding: 24px;
 }
 
-.btn1 {
+.icon {
+  color: #ed5001;
+}
+
+.password {
   padding-top: 40px;
 }
-.btn3 {
-  padding-bottom: 40px;
+
+.btn {
+  padding-top: 40px;
+  padding-bottom: 32px;
 }
