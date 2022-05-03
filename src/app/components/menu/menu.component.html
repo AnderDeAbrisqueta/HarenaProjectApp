@@ -1,0 +1,35 @@
+<ion-menu side="end" menuId="main-menu" contentId="main">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item *ngIf="authService.getCurrentUser()">
+        <ion-icon name="person" slot="start" class="icon"></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="settings" slot="start" class="icon"></ion-icon>
+        <ion-label>Configuración</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon
+          name="information-circle-outline"
+          slot="start"
+          class="icon"
+        ></ion-icon>
+        <ion-label>Acerca de la aplicación</ion-label>
+      </ion-item>
+      <ion-item
+        *ngIf="authService.getCurrentUser()"
+        (click)="authService.logout()"
+        href="/login"
+      >
+        <ion-icon name="exit" slot="start" class="icon"></ion-icon>
+        <ion-label>Salir</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
