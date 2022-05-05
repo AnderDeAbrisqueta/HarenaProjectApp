@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "SourceSansPro-Regular";
+  src: url("/assets/fonts/SourceSansPro-Regular.ttf");
+}
+
+a {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  padding: 40px;
+}
+
+.img {
+  padding-top: 80px;
+}
+
+.login {
+  font-family: "SourceSansPro-Regular";
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+}
+
+.input {
+  padding: 24px;
+}
+
+.icon {
+  color: #ed5001;
+}
+
+.password {
+  padding-top: 40px;
+}
+
+.btn {
+  padding-top: 40px;
+  padding-bottom: 32px;
+}

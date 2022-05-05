@@ -4,10 +4,10 @@
       <ion-back-button defaultHref="home"></ion-back-button>
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Voluntarios</ion-title>
-    <ion-buttons slot="end">
+    <ion-title> Voluntarios </ion-title>
+    <!-- <ion-buttons slot="end">
       <ion-menu-button menu="main-menu"></ion-menu-button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-toolbar>
   <ion-toolbar color="warning">
     <ion-searchbar
@@ -19,8 +19,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let v of volunteers | async">
+  <ion-list *ngFor="let v of volunteers | async">
+    <ion-item *ngIf="v.userType == 'Persona Voluntaria'">
       <ion-avatar slot="start">
         <img *ngIf="v.imageUrl != ''" [src]="v.imageUrl" />
         <img

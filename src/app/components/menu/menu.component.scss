@@ -1,3 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "SourceSansPro-Regular";
+  src: url("/assets/fonts/SourceSansPro-Regular.ttf");
+}
+
+ion-title {
+  font-family: "SourceSansPro-Regular";
+  text-align: center;
+}
+
 .icon {
-    color: #ed5001;
+  color: #ed5001;
 }

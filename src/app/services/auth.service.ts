@@ -5,6 +5,8 @@ import {
   signInWithEmailAndPassword,
   getAuth,
   signOut,
+  createUserWithEmailAndPassword,
+  UserCredential,
 } from '@angular/fire/auth';
 
 @Injectable({
@@ -26,6 +28,10 @@ export class AuthService {
 
   getCurrentUser(): User {
     return getAuth().currentUser;
+  }
+
+  register(email: string, password: string): Promise<UserCredential> {
+    return createUserWithEmailAndPassword(this.auth, email, password);
   }
 
   logout() {
