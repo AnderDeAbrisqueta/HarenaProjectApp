@@ -40,17 +40,17 @@
             [(ngModel)]="password"
           ></ion-input>
         </ion-item>
-        <ion-button class="btn" size="large" (click)="register()">
-          Registrar
-        </ion-button>
-        <ion-button
-          class="btn btnCancelar"
-          size="large"
-          href="/login"
-          color="light"
-        >
-          Cancelar
-        </ion-button>
+        <div class="btn">
+          <ion-button size="large" (click)="register()"> Registrar </ion-button>
+          <ion-button
+            size="large"
+            href="/login"
+            color="light"
+            class="btnCancelar"
+          >
+            Cancelar
+          </ion-button>
+        </div>
       </ion-card-content>
     </ion-card>
   </div>

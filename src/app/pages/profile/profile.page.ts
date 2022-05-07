@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  volunteer: Person = {
+  person: Person = {
     personId: '',
     imageUrl: '',
     firstName: '',
@@ -40,16 +40,20 @@ export class ProfilePage implements OnInit {
       this.action = 'edit-profile';
       this.personService
         .getPerson(id)
-        .subscribe((data) => (this.volunteer = data));
+        .subscribe((data) => (this.person = data));
     }
   }
 
-  addVolunteer() {
+  addPerson() {
     if (this.action === 'create-profile') {
-      this.personService.addPerson(this.volunteer);
+      this.personService.addPerson(this.person);
     } else {
-      this.personService.updatePerson(this.volunteer);
+      this.personService.updatePerson(this.person);
     }
-    this.router.navigateByUrl('/volunteers-list');
+    if (this.person.userType === 'Persona Voluntaria') {
+      this.router.navigateByUrl('/volunteers-list');
+    } else {
+      this.router.navigateByUrl('/old-person-list');
+    }
   }
 }

@@ -1,9 +1,56 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>oldPersonList</ion-title>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Personas Mayores </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="warning">
+    <ion-searchbar
+      inputmode="search"
+      animated
+      placeholder="Buscar Persona Mayor....."
+    ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list *ngFor="let o of oldPersons | async">
+    <ion-item *ngIf="o.userType == 'Persona Mayor'">
+      <ion-avatar slot="start">
+        <img *ngIf="o.imageUrl != ''" [src]="o.imageUrl" />
+        <img
+          *ngIf="o.imageUrl == ''"
+          src="./assets/images/person-outline.svg"
+        />
+      </ion-avatar>
+      <ion-label>
+        {{ o.lastName }} {{ o.firstName }}
+        <h3>{{ o.phone }}</h3>
+        <p>{{o.address.street}}, {{o.address.numberStreet}}</p>
+      </ion-label>
+      <ion-icon
+        name="pencil-outline"
+        color="warning"
+        size="small"
+        (click)="goEditPerson(o.personId)"
+      ></ion-icon>
+      &nbsp;
+      <ion-icon
+        name="trash-outline"
+        color="warning"
+        size="small"
+        (click)="personService.deletePerson(o.personId)"
+      ></ion-icon>
+    </ion-item>
+  </ion-list>
 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addVolunteer()" color="warning">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
