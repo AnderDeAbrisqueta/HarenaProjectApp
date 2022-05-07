@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { VolunteersListPageRoutingModule } from './volunteers-list-routing.module';
 
 import { VolunteersListPage } from './volunteers-list.page';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VolunteersListPageRoutingModule
+    VolunteersListPageRoutingModule,
+    PipesModule,
   ],
-  declarations: [VolunteersListPage]
+  declarations: [VolunteersListPage],
 })
 export class VolunteersListPageModule {}

@@ -13,12 +13,13 @@
       inputmode="search"
       animated
       placeholder="Buscar Persona Mayor....."
+      (ionChange)="searchOldPerson($event)"
     ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let o of oldPersons | async">
+  <ion-list *ngFor="let o of oldPersons | async | searchPerson:searchedText">
     <ion-item *ngIf="o.userType == 'Persona Mayor'">
       <ion-avatar slot="start">
         <img *ngIf="o.imageUrl != ''" [src]="o.imageUrl" />
@@ -43,7 +44,7 @@
         name="trash-outline"
         color="warning"
         size="small"
-        (click)="personService.deletePerson(o.personId)"
+        (click)="personService.presentAlertConfirm(o)"
       ></ion-icon>
     </ion-item>
   </ion-list>

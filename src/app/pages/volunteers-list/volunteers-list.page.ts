@@ -12,6 +12,7 @@ import { PersonService } from '../../services/person.service';
 export class VolunteersListPage implements OnInit {
   volunteers: Observable<Person[]>;
   filterArray: Observable<Person[]> = this.personService.getPersons();
+  searchedText: string = '';
 
   constructor(public personService: PersonService, private router: Router) {
     this.volunteers = this.personService.getPersons();
@@ -25,5 +26,10 @@ export class VolunteersListPage implements OnInit {
 
   goEditPerson(id: string) {
     this.router.navigateByUrl(`edit-profile/${id}`);
+  }
+
+  searchVolunteerPerson(event) {
+    const text = event.target.value;
+    this.searchedText = text;
   }
 }

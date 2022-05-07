@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class OldPersonListPage implements OnInit {
   oldPersons: Observable<Person[]>;
   filterArray: Observable<Person[]> = this.personService.getPersons();
+  searchedText: string = '';
 
   constructor(public personService: PersonService, private router: Router) {
     this.oldPersons = this.personService.getPersons();
@@ -25,5 +26,10 @@ export class OldPersonListPage implements OnInit {
 
   goEditPerson(id: string) {
     this.router.navigateByUrl(`edit-profile/${id}`);
+  }
+
+  searchOldPerson(event) {
+    const text = event.target.value;
+    this.searchedText = text;
   }
 }

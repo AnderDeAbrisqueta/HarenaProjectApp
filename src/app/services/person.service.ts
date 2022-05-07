@@ -11,6 +11,7 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Person } from '../model/person';
+import { AlertController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,10 @@ import { Person } from '../model/person';
 export class PersonService {
   persons: Person[] = [];
 
-  constructor(private firestore: Firestore) {}
+  constructor(
+    private firestore: Firestore,
+    private alertController: AlertController
+  ) {}
 
   public async addPerson(person: Person) {
     await addDoc(collection(this.firestore, 'persons'), person);
@@ -45,5 +49,30 @@ export class PersonService {
   getPerson(id: string): Observable<Person> {
     const docRef = doc(this.firestore, `persons/${id}`);
     return docData(docRef, { idField: 'personId' }) as Observable<Person>;
+  }
+
+  async presentAlertConfirm(person: Person) {
+    const alert = await this.alertController.create({
+      header: `Borrar ${person.userType}`,
+      message: `¿Estás seguro que quieres borrar a <strong>${person.lastName}</strong>? será borrado permanentemente!!!`,
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: (blah) => {
+            console.log('Confirm Cancel: yes');
+          },
+        },
+        {
+          text: 'Aceptar',
+          handler: () => {
+            this.deletePerson(person.personId);
+            console.log('Confirm Ok');
+          },
+        },
+      ],
+    });
+
+    await alert.present();
   }
 }

@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { OldPersonListPageRoutingModule } from './old-person-list-routing.module';
 
 import { OldPersonListPage } from './old-person-list.page';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OldPersonListPageRoutingModule
+    OldPersonListPageRoutingModule,
+    PipesModule,
   ],
-  declarations: [OldPersonListPage]
+  declarations: [OldPersonListPage],
 })
 export class OldPersonListPageModule {}
