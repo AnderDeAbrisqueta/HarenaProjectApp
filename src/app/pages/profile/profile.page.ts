@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Person } from 'src/app/model/person';
 import { PersonService } from '../../services/person.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -23,15 +24,21 @@ export class ProfilePage implements OnInit {
     phone: '',
     email: '',
     userType: '',
+    description: '',
+    person: '',
   };
   pageTitle: string = 'Nueva Persona';
   action: string = 'create-profile';
+
+  persons: Observable<Person[]>;
 
   constructor(
     private personService: PersonService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) {}
+  ) {
+    this.persons = this.personService.getPersons();
+  }
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');

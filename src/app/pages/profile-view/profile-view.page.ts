@@ -23,6 +23,8 @@ export class ProfileViewPage implements OnInit {
     phone: '',
     email: '',
     userType: '',
+    description: '',
+    person: '',
   };
 
   constructor(

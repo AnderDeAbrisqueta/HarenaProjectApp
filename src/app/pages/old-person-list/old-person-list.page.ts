@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class OldPersonListPage implements OnInit {
   oldPersons: Observable<Person[]>;
-  filterArray: Observable<Person[]> = this.personService.getPersons();
+  // filterArray: Observable<Person[]> = this.personService.getPersons();
   searchedText: string = '';
 
   constructor(public personService: PersonService, private router: Router) {

@@ -53,7 +53,39 @@
       >
     </ion-select>
   </ion-item>
-  <ion-button expand="block" color="warning" (click)="addPerson()">
+  <ion-item>
+    <ion-label position="floating" color="warning">Descripción:</ion-label>
+    <ion-textarea clearInput [(ngModel)]="person.description"></ion-textarea>
+  </ion-item>
+  <!-- <ion-item>
+    <ng-container
+      *ngIf="person.userType == 'Persona Voluntaria'; else elseTemplate"
+    >
+      <ion-label position="floating" color="warning"
+        >Persona Mayor a cargo:
+      </ion-label>
+      <div *ngFor="let p of persons | async">
+        <ion-select [(ngModel)]="p.person">
+          <ion-select-option value="p.personID"
+            >{{p.lastName}}, {{p.firstName}}</ion-select-option
+          >
+        </ion-select>
+      </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <ion-label position="floating" color="warning"
+        >Persona voluntaria asociada:
+      </ion-label>
+      <div *ngFor="let p of persons | async">
+        <ion-select [(ngModel)]="p.person">
+          <ion-select-option value="p.personID"
+            >{{p.lastName}}, {{p.firstName}}</ion-select-option
+          >
+        </ion-select>
+      </div>
+    </ng-template>
+  </ion-item> -->
+  <ion-button expand="block" color="warning" (click)="addPerson()" size="large">
     Guardar
   </ion-button>
 </ion-content>

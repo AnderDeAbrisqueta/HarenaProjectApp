@@ -36,11 +36,12 @@
         </ion-card-header>
 
         <ion-card-content>
-          {{ person.email }}
+          <div><br />{{person.description}}</div>
           <div>
             <br />
             <ion-icon slot="start" name="call"></ion-icon> {{ person.phone }}
           </div>
+          <div>{{person.email }}</div>
         </ion-card-content>
       </div>
     </ion-card>

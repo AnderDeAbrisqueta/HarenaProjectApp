@@ -8,6 +8,8 @@ export interface Person {
   phone: string;
   email?: string;
   userType: string;
+  description?: string;
+  person?: string;
 }
 
 interface Address {
