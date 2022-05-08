@@ -32,4 +32,8 @@ export class VolunteersListPage implements OnInit {
     const text = event.target.value;
     this.searchedText = text;
   }
+
+  goVolunteerProfileView(id: string) {
+    this.router.navigateByUrl(`profile-view/${id}`);
+  }
 }

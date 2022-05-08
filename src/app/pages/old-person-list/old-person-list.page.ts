@@ -32,4 +32,8 @@ export class OldPersonListPage implements OnInit {
     const text = event.target.value;
     this.searchedText = text;
   }
+
+  goOldPersonProfileView(id: string) {
+    this.router.navigateByUrl(`profile-view/${id}`);
+  }
 }

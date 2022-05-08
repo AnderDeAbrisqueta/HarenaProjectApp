@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="volunteer-list"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <div class="title">
+      <ion-title
+        *ngIf="person.userType == 'Persona Voluntaria' ; else elseTemplate"
+      >
+        Persona Voluntaria
+      </ion-title>
+      <ng-template #elseTemplate> Persona Mayor </ng-template>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-avatar>
+    <img *ngIf="person.imageUrl != ''" [src]="person.imageUrl" />
+    <img
+      *ngIf="person.imageUrl == ''"
+      src="./assets/images/person-outline.svg"
+    />
+  </ion-avatar>
+  <div class="card">
+    <ion-card>
+      <div class="card-info">
+        <ion-card-header>
+          <ion-card-subtitle>{{ person.address.street }}</ion-card-subtitle>
+          <ion-card-title
+            >{{ person.firstName }} {{ person.lastName }}</ion-card-title
+          >
+        </ion-card-header>
+
+        <ion-card-content>
+          {{ person.email }}
+          <div>
+            <br />
+            <ion-icon slot="start" name="call"></ion-icon> {{ person.phone }}
+          </div>
+        </ion-card-content>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

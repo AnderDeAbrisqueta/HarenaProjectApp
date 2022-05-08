@@ -1,1 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
+@font-face {
+  font-family: "SourceSansPro-Regular";
+  src: url("/assets/fonts/SourceSansPro-Regular.ttf");
+}
+
+.title {
+  font-family: "SourceSansPro-Regular";
+}
+
+.searchBar {
+  font-family: "SourceSansPro-Regular";
+  padding-right: 7px;
+}
+
+.label {
+  font-family: "SourceSansPro-Regular";
+  padding: 8px;
+}

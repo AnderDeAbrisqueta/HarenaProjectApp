@@ -65,6 +65,15 @@ const routes: Routes = [
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
+    path: 'profile-view/:id',
+    loadChildren: () =>
+      import('./pages/profile-view/profile-view.module').then(
+        (m) => m.ProfileViewPageModule
+      ),
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+  },
+  {
     path: 'login',
     loadChildren: () =>
       import('./pages/login/login.module').then((m) => m.LoginPageModule),

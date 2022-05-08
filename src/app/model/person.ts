@@ -1,12 +1,12 @@
 export interface Person {
   personId: string;
-  imageUrl: string;
+  imageUrl?: string;
   firstName: string;
   lastName: string;
   gender: string;
   address: Address;
   phone: string;
-  email: string;
+  email?: string;
   userType: string;
 }
 

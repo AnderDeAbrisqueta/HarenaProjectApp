@@ -11,14 +11,24 @@
 
 .title {
   font-family: "SourceSansPro-Regular";
+  font-size: 20px;
 }
 
-.searchBar {
-  font-family: "SourceSansPro-Regular";
-  padding-right: 7px;
+.card {
+  padding: 12px;
 }
 
-.label {
+.card-info {
+  padding: 12px;
   font-family: "SourceSansPro-Regular";
-  padding: 8px;
+}
+
+ion-avatar {
+  margin: auto;
+  margin-top: 20px;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 140px !important;
+  max-height: 140px !important;
+  padding-bottom: 8px;
 }
