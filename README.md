@@ -46,5 +46,13 @@ La base de datos que se usará para este proyecto será FireBase y la estructura
   }
 }
 ```
+
+## Avances y lo que queda por completar
+
+Para conocer los avances y lo restante para culminar el proyecto se les ha enviado una invitación a JIRA para que puedan hacer un seguimiento.
+
+## Bibliografía
+
+**Sánchez, José L**. (2021): Aprende Ionic con Ejercicios. Leanpub.
   
 
