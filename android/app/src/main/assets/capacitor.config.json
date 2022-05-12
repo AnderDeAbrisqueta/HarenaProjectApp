@@ -1,0 +1,6 @@
+{
+	"appId": "com.harenaprojectapp.app",
+	"appName": "HarenaProjectApp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HarenaProjectApp</string>
+    <string name="title_activity_main">HarenaProjectApp</string>
+    <string name="package_name">com.harenaprojectapp.app</string>
+    <string name="custom_url_scheme">com.harenaprojectapp.app</string>
+</resources>
