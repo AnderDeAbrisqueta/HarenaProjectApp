@@ -46,5 +46,9 @@ La base de datos que se usará para este proyecto será FireBase y la estructura
   }
 }
 ```
+
+## Bibliografía
+
+**Sánchez, José L**. (2021): Aprende Ionic con Ejercicios. Leanpub.
   
 
