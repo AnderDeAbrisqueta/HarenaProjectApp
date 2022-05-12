@@ -51,6 +51,10 @@ La base de datos que se usará para este proyecto será FireBase y la estructura
 
 Para conocer los avances y lo restante para culminar el proyecto se les ha enviado una invitación a JIRA para que puedan hacer un seguimiento.
 
+## APK
+
+La APK esta en los archivos y se llama app-debug.apk.
+
 ## Bibliografía
 
 **Sánchez, José L**. (2021): Aprende Ionic con Ejercicios. Leanpub.
