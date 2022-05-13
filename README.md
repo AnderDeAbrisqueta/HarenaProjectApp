@@ -54,6 +54,7 @@ Para conocer los avances y lo restante para culminar el proyecto se les ha envia
 ## APK
 
 La APK está en los archivos y se llama app-debug.apk.
+Descarga la [APK](./app-debug.apk) de la aplicación.
 
 ## Bibliografía
 
