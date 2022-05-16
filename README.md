@@ -20,7 +20,7 @@ La aplicación tendrá un login que permitirá acceder al coordinador, un screen
   <li>CRUD de usuarios: en esta pantalla se podrá gestionar la información de los adultos mayores. </li>
   <li>CRUD de voluntarios: en esta pantalla se podrá gestionar la información de los voluntarios.</li>
   <li>Formulario de la visita: en esta pantalla se recogerá la información familiar,  social y sanitaria del adulto mayor y el resultado de la visita.</li>
-  <li>Calendario: en eque se podrá agendar y organizar las visitas.</li>
+  <li>Calendario: en el que se podrá agendar y organizar las visitas.</li>
 </ol>
 
 ## Base de datos
