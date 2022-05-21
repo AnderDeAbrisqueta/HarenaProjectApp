@@ -18,17 +18,35 @@
     <ion-card>
       <div class="card-info">
         <ion-card-header>
-          <ion-card-title
-            ><ion-input type="text" placeholder="Nombre"></ion-input
-          ></ion-card-title>
+          <ion-card-title>
+            <ion-input
+              type="text"
+              placeholder="Nombre"
+              [(ngModel)]="user.userName"
+            ></ion-input>
+            <ion-input
+              type="text"
+              placeholder="Apellidos"
+              [(ngModel)]="user.userLastName"
+            ></ion-input>
+            <b>{{userName}} {{userLastName}}</b>
+          </ion-card-title>
         </ion-card-header>
         <ion-card-content>
           <div>
             <ion-icon slot="start" name="mail-outline"></ion-icon>
-            {{UserEmail}}
+            {{userEmail}}
           </div>
         </ion-card-content>
       </div>
     </ion-card>
   </div>
+  <ion-button
+    expand="block"
+    color="warning"
+    (click)="setUserName()"
+    size="large"
+  >
+    Guardar
+  </ion-button>
 </ion-content>

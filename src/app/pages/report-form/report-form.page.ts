@@ -56,10 +56,13 @@ export class ReportFormPage implements OnInit {
   persons: Observable<Person[]>;
   reports: Observable<Report[]>;
 
+  userName: string = localStorage.getItem('userName');
+  userLastName: string = localStorage.getItem('userLastName');
+
   constructor(
     private personService: PersonService,
     private reportService: ReportService,
-    private router: Router,
+
     private activatedRoute: ActivatedRoute
   ) {
     this.persons = this.personService.getPersons();
