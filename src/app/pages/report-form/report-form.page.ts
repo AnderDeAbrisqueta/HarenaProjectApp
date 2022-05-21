@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from 'src/app/model/person';
+import { Person } from '../../model/person';
+import { Observable } from 'rxjs';
 import { PersonService } from '../../services/person.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Report } from '../../model/report';
+import { ReportService } from '../../services/report.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss'],
+  selector: 'app-report-form',
+  templateUrl: './report-form.page.html',
+  styleUrls: ['./report-form.page.scss'],
 })
-export class ProfilePage implements OnInit {
+export class ReportFormPage implements OnInit {
   person: Person = {
     personId: '',
     imageUrl: '',
@@ -37,41 +39,49 @@ export class ProfilePage implements OnInit {
       observations: '',
     },
   };
+
+  report: Report = {
+    coordinator: '',
+    oldPesonName: '',
+    volunteerName: '',
+    reportId: '',
+    reportReference: '',
+    summaryVisit: '',
+  };
+
   searchedText: string = '';
-  pageTitle: string = 'Nueva Persona';
-  action: string = 'create-profile';
+  pageTitle: string = 'Nuevo formulario';
+  action: string = 'report-form';
 
   persons: Observable<Person[]>;
+  reports: Observable<Report[]>;
 
   constructor(
     private personService: PersonService,
+    private reportService: ReportService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
     this.persons = this.personService.getPersons();
+    this.reports = this.reportService.getReports();
   }
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id != null) {
-      this.pageTitle = 'Editar Persona';
-      this.action = 'edit-profile';
-      this.personService
-        .getPerson(id)
-        .subscribe((data) => (this.person = data));
+      this.pageTitle = 'Editar formulario';
+      this.action = 'edit-report-form';
+      this.reportService
+        .getReport(id)
+        .subscribe((data) => (this.report = data));
     }
   }
 
-  addPerson() {
-    if (this.action === 'create-profile') {
-      this.personService.addPerson(this.person);
+  addReport() {
+    if (this.action === 'report-form') {
+      this.reportService.addReport(this.report);
     } else {
-      this.personService.updatePerson(this.person);
-    }
-    if (this.person.userType === 'Persona Voluntaria') {
-      this.router.navigateByUrl('/volunteers-list');
-    } else {
-      this.router.navigateByUrl('/old-person-list');
+      this.reportService.updateReport(this.report);
     }
   }
 

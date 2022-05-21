@@ -74,6 +74,33 @@ const routes: Routes = [
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
+    path: 'report-form',
+    loadChildren: () =>
+      import('./pages/report-form/report-form.module').then(
+        (m) => m.ReportFormPageModule
+      ),
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+  },
+  {
+    path: 'edit-report-form/:id',
+    loadChildren: () =>
+      import('./pages/report-form/report-form.module').then(
+        (m) => m.ReportFormPageModule
+      ),
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+  },
+  {
+    path: 'report-form-view/:id',
+    loadChildren: () =>
+      import('./pages/report-form-view/report-form-view.module').then(
+        (m) => m.ReportFormViewPageModule
+      ),
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+  },
+  {
     path: 'login',
     loadChildren: () =>
       import('./pages/login/login.module').then((m) => m.LoginPageModule),

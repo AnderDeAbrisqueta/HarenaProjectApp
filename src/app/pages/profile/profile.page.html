@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  <!-- Información general de la persona -->
   <ion-item>
     <ion-label position="floating" color="warning">Imagen:</ion-label>
     <ion-input clearInput [(ngModel)]="person.imageUrl"></ion-input>
@@ -57,34 +58,128 @@
     <ion-label position="floating" color="warning">Descripción:</ion-label>
     <ion-textarea clearInput [(ngModel)]="person.description"></ion-textarea>
   </ion-item>
-  <!-- <ion-item>
+  <ion-item>
     <ng-container
       *ngIf="person.userType == 'Persona Voluntaria'; else elseTemplate"
     >
-      <ion-label position="floating" color="warning"
-        >Persona Mayor a cargo:
-      </ion-label>
-      <div *ngFor="let p of persons | async">
-        <ion-select [(ngModel)]="p.person">
-          <ion-select-option value="p.personID"
-            >{{p.lastName}}, {{p.firstName}}</ion-select-option
-          >
-        </ion-select>
-      </div>
+      <ion-label color="warning">Persona mayor: </ion-label>
     </ng-container>
     <ng-template #elseTemplate>
-      <ion-label position="floating" color="warning"
-        >Persona voluntaria asociada:
-      </ion-label>
-      <div *ngFor="let p of persons | async">
-        <ion-select [(ngModel)]="p.person">
-          <ion-select-option value="p.personID"
-            >{{p.lastName}}, {{p.firstName}}</ion-select-option
-          >
-        </ion-select>
-      </div>
+      <ion-label color="warning">Persona voluntaria: </ion-label>
     </ng-template>
-  </ion-item> -->
+    <ion-select [(ngModel)]="person.personAtending">
+      <ion-select-option
+        *ngFor="let p of persons | async | searchPerson:searchedText"
+        [value]="p"
+      >
+        {{p.firstName + ' ' + p.lastName}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Información adicional de la persona mayor -->
+  <br />
+  <ng-container *ngIf="person.userType == 'Persona Mayor'">
+    <h2 class="info">Información Familiar</h2>
+    <ion-item>
+      <ion-label position="floating" color="warning"
+        >¿Cuál es su estado civil?:
+      </ion-label>
+      <ion-select
+        [(ngModel)]="person.oldPersonAditionalInfo.civilStatus"
+        value="Persona Soltera"
+      >
+        <ion-select-option value="Persona Soltera"
+          >Persona Soltera</ion-select-option
+        >
+        <ion-select-option value="Persona Casada"
+          >Persona Casada</ion-select-option
+        >
+        <ion-select-option value="Persona Viuda"
+          >Persona Viuda</ion-select-option
+        >
+        <ion-select-option value="Otro">Otro</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="warning">¿Tiene hijos?</ion-label>
+      <ion-toggle
+        [(ngModel)]="person.oldPersonAditionalInfo.hasChildren"
+        color="warning"
+      ></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label color="warning">¿Cuántos hijos?</ion-label>
+      <ion-select
+        [(ngModel)]="person.oldPersonAditionalInfo.childrenNumber"
+        value="0"
+      >
+        <ion-select-option value="0">0</ion-select-option>
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+        <ion-select-option value="3">3</ion-select-option>
+        <ion-select-option value="4">4</ion-select-option>
+        <ion-select-option value="5">5</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <br />
+    <h2 class="info">Información Sociosanitaria</h2>
+    <ion-item>
+      <ion-label color="warning">¿Recibe ayuda del ayuntamiento?</ion-label>
+      <ion-toggle
+        [(ngModel)]="person.oldPersonAditionalInfo.hasHelpTownHall"
+        color="warning"
+      ></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label color="warning">¿Qué tipo de ayuda?</ion-label>
+      <ion-select
+        [(ngModel)]="person.oldPersonAditionalInfo.helpTownHallType"
+        value="Alimentaria"
+        multiple="true"
+      >
+        <ion-select-option value="Alimentaria">Alimentaria</ion-select-option>
+        <ion-select-option value="Limpieza">Limpieza</ion-select-option>
+        <ion-select-option value="Otra">Otra</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="warning">¿Recibe ayuda psicológica?</ion-label>
+      <ion-toggle
+        [(ngModel)]="person.oldPersonAditionalInfo.hasPsychologicalHelp"
+        color="warning"
+      ></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label color="warning">Medicación que toma: </ion-label>
+      <ion-select
+        [(ngModel)]="person.oldPersonAditionalInfo.treatment"
+        value="Alimentaria"
+        multiple="true"
+      >
+        <ion-select-option value="para el corazón"
+          >para el corazón</ion-select-option
+        >
+        <ion-select-option value="para la diabetes"
+          >para la diabetes</ion-select-option
+        >
+        <ion-select-option value="para la depresión"
+          >para la depresión</ion-select-option
+        >
+        <ion-select-option value="Otra">otra</ion-select-option>
+        <ion-select-option value="Otra">ninguna</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="warning">Observaciones:</ion-label>
+      <ion-textarea
+        clearInput
+        [(ngModel)]="person.oldPersonAditionalInfo.observations"
+      ></ion-textarea>
+    </ion-item>
+  </ng-container>
+
   <ion-button expand="block" color="warning" (click)="addPerson()" size="large">
     Guardar
   </ion-button>

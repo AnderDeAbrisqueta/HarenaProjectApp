@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { ReportListPageRoutingModule } from './report-list-routing.module';
 
 import { ReportListPage } from './report-list.page';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReportListPageRoutingModule
+    ReportListPageRoutingModule,
+    PipesModule,
   ],
-  declarations: [ReportListPage]
+  declarations: [ReportListPage],
 })
 export class ReportListPageModule {}

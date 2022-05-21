@@ -1,9 +1,53 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>reportList</ion-title>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title"> Reportes </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="warning" class="searchBar">
+    <ion-searchbar
+      inputmode="search"
+      animated
+      placeholder="Buscar Reporte....."
+      (ionChange)="searchReport($event)"
+    ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div *ngFor="let r of reports | async | searchReport:searchedText">
+    <ion-list>
+      <ion-item>
+        //TODO Falta colocar icono del reporte
+        <ion-label class="label" (click)="goReportView(r.reportId)">
+          {{ r.reportReference }} {{ r.reportDate }}
+          <h3>Persona voluntria: {{ r.volunteerName }}</h3>
+          <h3>Persona mayor: {{r.oldPersonName}}</h3>
+        </ion-label>
+        <ion-icon
+          name="pencil-outline"
+          color="warning"
+          size="small"
+          (click)="goEditReport(r.reportId)"
+        ></ion-icon>
+        &nbsp;
+        <ion-icon
+          name="trash-outline"
+          color="warning"
+          size="small"
+          (click)="reportService.presentAlertConfirm(r)"
+        ></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addReport()" color="warning">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

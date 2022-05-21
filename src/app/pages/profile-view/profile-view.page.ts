@@ -24,7 +24,7 @@ export class ProfileViewPage implements OnInit {
     email: '',
     userType: '',
     description: '',
-    person: '',
+    personAtending: '',
   };
 
   constructor(
