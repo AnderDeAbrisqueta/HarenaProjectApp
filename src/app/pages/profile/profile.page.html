@@ -30,18 +30,32 @@
   </ion-item>
   <ion-item>
     <ion-label position="floating" color="warning">Teléfono:</ion-label>
-    <ion-input clearInput [(ngModel)]="person.phone"></ion-input>
+    <ion-input
+      clearInput
+      [(ngModel)]="person.phone"
+      type="tel"
+      pattern="tel"
+    ></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating" color="warning">E-mail:</ion-label>
-    <ion-input clearInput [(ngModel)]="person.email"></ion-input>
+    <ion-input
+      clearInput
+      [(ngModel)]="person.email"
+      type="email"
+      pattern="email"
+    ></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating" color="warning">Dirección:</ion-label>
     <ion-label position="floating" color="warning">Calle:</ion-label>
     <ion-input clearInput [(ngModel)]="person.address.street"></ion-input>
     <ion-label position="floating" color="warning">Número:</ion-label>
-    <ion-input clearInput [(ngModel)]="person.address.numberStreet"></ion-input>
+    <ion-input
+      clearInput
+      [(ngModel)]="person.address.numberStreet"
+      value="disabled"
+    ></ion-input>
     <ion-label position="floating" color="warning">Código Postal:</ion-label>
     <ion-input clearInput [(ngModel)]="person.address.postCode"></ion-input>
   </ion-item>

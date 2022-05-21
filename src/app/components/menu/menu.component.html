@@ -6,7 +6,7 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item *ngIf="authService.getCurrentUser()">
+      <ion-item *ngIf="authService.getCurrentUser()" href="/profile-user">
         <ion-icon name="person" slot="start" class="icon"></ion-icon>
         <ion-label>Perfil</ion-label>
       </ion-item>

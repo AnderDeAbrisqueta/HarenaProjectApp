@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  @font-face {
+    font-family: "SourceSansPro-Regular";
+    src: url("/assets/fonts/SourceSansPro-Regular.ttf");
+  }
+  
+  .title {
+    font-family: "SourceSansPro-Regular";
+    font-size: 20px;
+  }
+  
+  .card {
+    padding: 12px;
+  }
+  
+  .card-info {
+    padding: 12px;
+    font-family: "SourceSansPro-Regular";
+  }
+  
+  ion-avatar {
+    margin: auto;
+    margin-top: 20px;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 140px !important;
+    max-height: 140px !important;
+    padding-bottom: 8px;
+  }
