@@ -36,6 +36,7 @@ export class ProfilePage implements OnInit {
       treatment: [],
       observations: '',
     },
+    isFirstTimeHarena: true,
   };
   searchedText: string = '';
   pageTitle: string = 'Nueva Persona';

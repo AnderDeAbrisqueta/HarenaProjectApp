@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "SourceSansPro-Regular";
+  src: url("/assets/fonts/SourceSansPro-Regular.ttf");
+}
+
+.title {
+  font-family: "SourceSansPro-Regular";
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+.subtitle {
+  font-family: "SourceSansPro-Regular";
+  padding-bottom: 12px;
+}
+
+.summary {
+  font-family: "SourceSansPro-Regular";
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+h6 {
+  font-family: "SourceSansPro-Regular";
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+span {
+  font-family: "SourceSansPro-Regular";
+}
+
+ion-button {
+  padding-top: 24px;
+}

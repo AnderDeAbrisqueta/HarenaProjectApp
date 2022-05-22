@@ -101,7 +101,7 @@ const routes: Routes = [
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
-    path: 'report-form-view/:id',
+    path: 'report-view/:id',
     loadChildren: () =>
       import('./pages/report-form-view/report-form-view.module').then(
         (m) => m.ReportFormViewPageModule

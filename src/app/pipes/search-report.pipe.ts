@@ -13,11 +13,7 @@ export class SearchReportPipe implements PipeTransform {
     text = text.toLocaleLowerCase();
 
     return report.filter((reports) => {
-      return (
-        reports.reportReference.toLocaleLowerCase().includes(text) ||
-        reports.volunteerName.toLocaleLowerCase().includes(text) ||
-        reports.oldPesonName.toLocaleLowerCase().includes(text)
-      );
+      return reports.reportReference.toLocaleLowerCase().includes(text);
     });
   }
 }

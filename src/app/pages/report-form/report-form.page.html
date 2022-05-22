@@ -8,9 +8,47 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h2><b>Reporte de la visita</b></h2>
+  <h2><b>Datos de la visita</b></h2>
   <br />
   <span><b>Coordinador: </b>{{userName}} {{userLastName}}</span>
 
-  <ion-button expand="block" color="warning" size="large"> Guardar </ion-button>
+  <ion-item>
+    <ion-label position="floating" color="warning"
+      >Número de referencia:
+    </ion-label>
+    <ion-input
+      clearInput
+      [(ngModel)]="report.reportReference"
+      type="text"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="warning"
+      >Persona Voluntaria:</ion-label
+    >
+    <ion-select [(ngModel)]="report.volunteer" value="p">
+      <ion-select-option *ngFor="let p of persons | async" [value]="p">
+        {{p.firstName + ' ' + p.lastName}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" color="warning">Persona Mayor:</ion-label>
+    <ion-select [(ngModel)]="report.oldPerson" value="p">
+      <ion-select-option *ngFor="let p of persons | async" [value]="p">
+        {{p.firstName + ' ' + p.lastName}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" color="warning"
+      >Resumen de la visita:
+    </ion-label>
+    <ion-textarea clearInput [(ngModel)]="report.summaryVisit"></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="block" color="warning" size="large" (click)="addReport()">
+    Guardar
+  </ion-button>
 </ion-content>

@@ -11,6 +11,7 @@ export interface Person {
   description?: string;
   personAtending?: string;
   oldPersonAditionalInfo?: OldPersonInfo;
+  isFirstTimeHarena?: boolean;
 }
 
 interface Address {

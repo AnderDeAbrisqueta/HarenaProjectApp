@@ -193,6 +193,17 @@
       ></ion-textarea>
     </ion-item>
   </ng-container>
+  <ng-container *ngIf="person.userType == 'Persona Voluntaria'">
+    <ion-item>
+      <ion-label color="warning"
+        >¿Es la primera vez en la Fundación Harena?</ion-label
+      >
+      <ion-toggle
+        [(ngModel)]="person.isFirstTimeHarena"
+        color="warning"
+      ></ion-toggle>
+    </ion-item>
+  </ng-container>
 
   <ion-button expand="block" color="warning" (click)="addPerson()" size="large">
     Guardar

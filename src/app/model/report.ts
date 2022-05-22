@@ -1,7 +1,9 @@
+import { Person } from './person';
+
 export interface Report {
   coordinator: string;
-  oldPesonName: string;
-  volunteerName: string;
+  oldPerson?: Person;
+  volunteer?: Person;
   reportId: string;
   reportDate?: Date;
   reportReference: string;

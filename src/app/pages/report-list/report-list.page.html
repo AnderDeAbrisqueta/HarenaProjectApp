@@ -22,11 +22,16 @@
   <div *ngFor="let r of reports | async | searchReport:searchedText">
     <ion-list>
       <ion-item>
-        //TODO Falta colocar icono del reporte
+        <ion-icon color="warning" name="reader-outline"></ion-icon>
         <ion-label class="label" (click)="goReportView(r.reportId)">
           {{ r.reportReference }} {{ r.reportDate }}
-          <h3>Persona voluntria: {{ r.volunteerName }}</h3>
-          <h3>Persona mayor: {{r.oldPersonName}}</h3>
+          <h3>
+            Persona voluntria: {{ r.volunteer.firstName }}
+            {{r.volunteer.lastName}}
+          </h3>
+          <h3>
+            Persona mayor: {{r.oldPerson.firstName}} {{r.oldPerson.lastName}}
+          </h3>
         </ion-label>
         <ion-icon
           name="pencil-outline"

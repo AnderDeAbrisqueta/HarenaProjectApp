@@ -42,8 +42,60 @@ export class ReportFormPage implements OnInit {
 
   report: Report = {
     coordinator: '',
-    oldPesonName: '',
-    volunteerName: '',
+    oldPerson: {
+      personId: '',
+      imageUrl: '',
+      firstName: '',
+      lastName: '',
+      gender: '',
+      address: {
+        street: '',
+        numberStreet: 0,
+        postCode: 0,
+      },
+      phone: '',
+      email: '',
+      userType: '',
+      description: '',
+      personAtending: '',
+      oldPersonAditionalInfo: {
+        hasChildren: false,
+        childrenNumber: 0,
+        civilStatus: '',
+        hasHelpTownHall: false,
+        helpTownHallType: [],
+        hasPsychologicalHelp: false,
+        treatment: [],
+        observations: '',
+      },
+    },
+    volunteer: {
+      personId: '',
+      imageUrl: '',
+      firstName: '',
+      lastName: '',
+      gender: '',
+      address: {
+        street: '',
+        numberStreet: 0,
+        postCode: 0,
+      },
+      phone: '',
+      email: '',
+      userType: '',
+      description: '',
+      personAtending: '',
+      oldPersonAditionalInfo: {
+        hasChildren: false,
+        childrenNumber: 0,
+        civilStatus: '',
+        hasHelpTownHall: false,
+        helpTownHallType: [],
+        hasPsychologicalHelp: false,
+        treatment: [],
+        observations: '',
+      },
+    },
     reportId: '',
     reportReference: '',
     summaryVisit: '',
@@ -62,7 +114,7 @@ export class ReportFormPage implements OnInit {
   constructor(
     private personService: PersonService,
     private reportService: ReportService,
-
+    private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
     this.persons = this.personService.getPersons();
@@ -86,6 +138,7 @@ export class ReportFormPage implements OnInit {
     } else {
       this.reportService.updateReport(this.report);
     }
+    this.router.navigateByUrl('/report-list');
   }
 
   searchPerson(event) {
