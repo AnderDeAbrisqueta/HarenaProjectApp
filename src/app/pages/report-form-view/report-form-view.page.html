@@ -11,8 +11,11 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  <h6 class="refNumber">
+    <b>Número de referencia: </b>{{report.reportReference}}
+  </h6>
   <h1 class="title"><b>Fundación Harena</b></h1>
-  <h4 class="subtitle">Reporte de la visita</h4>
+  <h4 class="subtitle"><b>Reporte de la visita</b></h4>
   <h6><b>Coordinador: </b>{{userName}} {{userLastName}}</h6>
   <span
     ><b>Persona voluntaria: </b>{{report.volunteer.firstName}}
@@ -45,7 +48,16 @@
 
   <h4 class="summary"><b>Resumen de la visita:</b></h4>
   <p>{{report.summaryVisit}}</p>
-  <ion-button expand="block" color="warning" (click)="sendEmail()" size="large">
-    Enviar por email
+  <ion-button expand="block" color="warning" (click)="createPdf()" size="large">
+    Crear PDF
+  </ion-button>
+  <ion-button
+    expand="block"
+    color="light"
+    (click)="downloadPdf()"
+    size="large"
+    [disabled]="!pdfObj"
+  >
+    Descargar PDF
   </ion-button>
 </ion-content>

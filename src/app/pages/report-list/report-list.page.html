@@ -24,7 +24,7 @@
       <ion-item>
         <ion-icon color="warning" name="reader-outline"></ion-icon>
         <ion-label class="label" (click)="goReportView(r.reportId)">
-          {{ r.reportReference }} {{ r.reportDate }}
+          <b>{{ r.reportReference }}</b>
           <h3>
             Persona voluntria: {{ r.volunteer.firstName }}
             {{r.volunteer.lastName}}
