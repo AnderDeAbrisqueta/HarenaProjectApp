@@ -110,6 +110,15 @@ const routes: Routes = [
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
+    path: 'calendar',
+    loadChildren: () =>
+      import('./pages/calendar/calendar.module').then(
+        (m) => m.CalendarPageModule
+      ),
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
+  },
+  {
     path: 'login',
     loadChildren: () =>
       import('./pages/login/login.module').then((m) => m.LoginPageModule),
