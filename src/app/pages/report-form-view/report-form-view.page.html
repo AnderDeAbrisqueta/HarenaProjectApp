@@ -6,7 +6,9 @@
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="title"> Reporte de la visita </ion-title>
+    <ion-title style="font-family: SourceSansPro-Regular">
+      Reporte de la visita
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -48,15 +50,11 @@
 
   <h4 class="summary"><b>Resumen de la visita:</b></h4>
   <p>{{report.summaryVisit}}</p>
-  <ion-button expand="block" color="warning" (click)="createPdf()" size="large">
-    Crear PDF
-  </ion-button>
   <ion-button
     expand="block"
-    color="light"
+    color="warning"
     (click)="downloadPdf()"
     size="large"
-    [disabled]="!pdfObj"
   >
     Descargar PDF
   </ion-button>

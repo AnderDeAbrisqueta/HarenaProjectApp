@@ -4,7 +4,7 @@ const config: CapacitorConfig = {
   appId: 'com.harenaprojectapp.app',
   appName: 'HarenaProjectApp',
   webDir: 'www',
-  bundledWebRuntime: false,
+  bundledWebRuntime: false
 };
 
 export default config;

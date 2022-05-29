@@ -6,9 +6,13 @@ import { Platform } from '@ionic/angular';
 import { File } from '@ionic-native/file/ngx/index';
 import { FileOpener } from '@ionic-native/file-opener/ngx/index';
 
+import { Filesystem } from '@capacitor/filesystem';
+import { Share } from '@capacitor/share';
+
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: 'app-report-form-view',
   templateUrl: './report-form-view.page.html',
@@ -98,7 +102,7 @@ export class ReportFormViewPage implements OnInit {
     }
   }
 
-  createPdf() {
+  downloadPdf() {
     var docDefinition = {
       content: [
         {
@@ -183,12 +187,6 @@ export class ReportFormViewPage implements OnInit {
       },
     };
     this.pdfObj = pdfMake.createPdf(docDefinition);
-  }
-
-  downloadPdf() {
-    if (this.platform.is('cordova')) {
-    } else {
-      this.pdfObj.download();
-    }
+    this.pdfObj.download('report.pdf');
   }
 }
