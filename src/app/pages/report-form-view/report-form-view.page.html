@@ -13,49 +13,51 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h6 class="refNumber">
-    <b>Número de referencia: </b>{{report.reportReference}}
-  </h6>
-  <h1 class="title"><b>Fundación Harena</b></h1>
-  <h4 class="subtitle"><b>Reporte de la visita</b></h4>
-  <h6><b>Coordinador: </b>{{userName}} {{userLastName}}</h6>
-  <span
-    ><b>Persona voluntaria: </b>{{report.volunteer.firstName}}
-    {{report.volunteer.lastName}}</span
-  >
-  <br />
-  <span><b>Teléfono: </b>{{report.volunteer.phone}}</span>
-  <br />
-  <ng-container *ngIf="report.volunteer.isFirstTimeHarena; else elseTemplate">
-    <span><b>Primera vez en Harena: </b>Si</span>
-  </ng-container>
-  <ng-template #elseTemplate>
-    <span><b>Primera vez en Harena: </b>No</span>
-  </ng-template>
+  <div id="pdf-area">
+    <h6 class="refNumber">
+      <b>Número de referencia: </b>{{report.reportReference}}
+    </h6>
+    <h1 class="title"><b>Fundación Harena</b></h1>
+    <h4 class="subtitle"><b>Reporte de la visita</b></h4>
+    <h6><b>Coordinador: </b>{{userName}} {{userLastName}}</h6>
+    <span
+      ><b>Persona voluntaria: </b>{{report.volunteer.firstName}}
+      {{report.volunteer.lastName}}</span
+    >
+    <br />
+    <span><b>Teléfono: </b>{{report.volunteer.phone}}</span>
+    <br />
+    <ng-container *ngIf="report.volunteer.isFirstTimeHarena; else elseTemplate">
+      <span><b>Primera vez en Harena: </b>Si</span>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <span><b>Primera vez en Harena: </b>No</span>
+    </ng-template>
 
-  <br />
-  <br />
-  <span
-    ><b>Persona mayor: </b>{{report.oldPerson.firstName}}
-    {{report.oldPerson.lastName}}</span
-  >
-  <br />
-  <span
-    ><b>Dirección: </b>{{report.oldPerson.address.street}},
-    {{report.oldPerson.address.numberStreet}}</span
-  >
-  <br />
-  <span><b>Teléfono: </b>{{report.oldPerson.phone}}</span>
-  <br />
+    <br />
+    <br />
+    <span
+      ><b>Persona mayor: </b>{{report.oldPerson.firstName}}
+      {{report.oldPerson.lastName}}</span
+    >
+    <br />
+    <span
+      ><b>Dirección: </b>{{report.oldPerson.address.street}},
+      {{report.oldPerson.address.numberStreet}}</span
+    >
+    <br />
+    <span><b>Teléfono: </b>{{report.oldPerson.phone}}</span>
+    <br />
 
-  <h4 class="summary"><b>Resumen de la visita:</b></h4>
-  <p>{{report.summaryVisit}}</p>
-  <ion-button
-    expand="block"
-    color="warning"
-    (click)="downloadPdf()"
-    size="large"
-  >
-    Descargar PDF
-  </ion-button>
+    <h4 class="summary"><b>Resumen de la visita:</b></h4>
+    <p>{{report.summaryVisit}}</p>
+    <ion-button
+      expand="block"
+      color="warning"
+      (click)="downloadPdf()"
+      size="large"
+    >
+      Descargar PDF
+    </ion-button>
+  </div>
 </ion-content>

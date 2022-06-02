@@ -2,12 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Report } from '../../model/report';
 import { ReportService } from '../../services/report.service';
 import { ActivatedRoute } from '@angular/router';
-import { Platform } from '@ionic/angular';
-import { File } from '@ionic-native/file/ngx/index';
-import { FileOpener } from '@ionic-native/file-opener/ngx/index';
-
-import { Filesystem } from '@capacitor/filesystem';
-import { Share } from '@capacitor/share';
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
@@ -87,10 +81,7 @@ export class ReportFormViewPage implements OnInit {
 
   constructor(
     private reportService: ReportService,
-    private activatedRoute: ActivatedRoute,
-    private platform: Platform,
-    private file: File,
-    private fileOpener: FileOpener
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit() {
