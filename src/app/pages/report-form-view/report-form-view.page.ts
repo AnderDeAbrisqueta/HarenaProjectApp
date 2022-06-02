@@ -186,7 +186,6 @@ export class ReportFormViewPage implements OnInit {
         },
       },
     };
-    this.pdfObj = pdfMake.createPdf(docDefinition);
-    this.pdfObj.download('report.pdf');
+    pdfMake.createPdf(docDefinition).download('report.pdf');
   }
 }
