@@ -23,6 +23,8 @@ La aplicación tendrá un login que permitirá acceder al coordinador, un screen
   <li>Calendario: en el que se podrá agendar y organizar las visitas.</li>
 </ol>
 
+<img width="500px" src="./src/assets/images/mock.png">
+
 ## Base de datos
 
 La base de datos que se usará para este proyecto será FireBase y la estructura de datos será un objetos JSON, el que se puede entender como un árbol JSON alojado en la nube. A continuación se muestra un ejemplo del objeto JSON con la estructura de datos de los voluntarios:
@@ -47,9 +49,9 @@ La base de datos que se usará para este proyecto será FireBase y la estructura
 }
 ```
 
-## Avances y lo que queda por completar
+## Landing page y python
 
-Para conocer los avances y lo restante para culminar el proyecto se les ha enviado una invitación a JIRA para que puedan hacer un seguimiento.
+Acceso a los repositorios de la <a href="https://github.com/AnderDeAbrisqueta/angularHarenaProject">Landing page</a> y la página de <a href="https://github.com/AnderDeAbrisqueta/pytonProject">python</a>
 
 ## APK
 
