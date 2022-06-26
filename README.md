@@ -23,6 +23,7 @@ La aplicación tendrá un login que permitirá acceder al coordinador, un screen
   <li>Calendario: en el que se podrá agendar y organizar las visitas.</li>
 </ol>
 
+Mock up realizado en figma:
 <img width="500px" src="./src/assets/images/mock.png">
 
 ## Base de datos
