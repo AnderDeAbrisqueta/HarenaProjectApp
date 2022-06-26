@@ -49,7 +49,7 @@ La base de datos que se usará para este proyecto será FireBase y la estructura
 
 ## Landing page y python
 
-Acceso a los repositorios de la <a href="https://github.com/AnderDeAbrisqueta/angularHarenaProject">Landing page</a> y la página de <a href="https://github.com/AnderDeAbrisqueta/pytonProject">python page</a>
+Acceso a los repositorios de la <a href="https://github.com/AnderDeAbrisqueta/angularHarenaProject">Landing page</a> y la página de <a href="https://github.com/AnderDeAbrisqueta/pytonProject">python</a>
 
 ## APK
 
