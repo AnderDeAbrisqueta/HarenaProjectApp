@@ -24,6 +24,7 @@ La aplicación tendrá un login que permitirá acceder al coordinador, un screen
 </ol>
 
 Mock up realizado en figma:
+
 <img width="500px" src="./src/assets/images/mock.png">
 
 ## Base de datos
