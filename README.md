@@ -47,9 +47,9 @@ La base de datos que se usará para este proyecto será FireBase y la estructura
 }
 ```
 
-## Avances y lo que queda por completar
+## Landing page y python
 
-Para conocer los avances y lo restante para culminar el proyecto se les ha enviado una invitación a JIRA para que puedan hacer un seguimiento.
+Acceso a los repositorios de la Landing page <a href="https://github.com/AnderDeAbrisqueta/angularHarenaProject"> enlace </a> 
 
 ## APK
 
