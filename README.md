@@ -23,6 +23,8 @@ La aplicación tendrá un login que permitirá acceder al coordinador, un screen
   <li>Calendario: en el que se podrá agendar y organizar las visitas.</li>
 </ol>
 
+<img width="500px" src="./src/assets/images/mock.png">
+
 ## Base de datos
 
 La base de datos que se usará para este proyecto será FireBase y la estructura de datos será un objetos JSON, el que se puede entender como un árbol JSON alojado en la nube. A continuación se muestra un ejemplo del objeto JSON con la estructura de datos de los voluntarios:
